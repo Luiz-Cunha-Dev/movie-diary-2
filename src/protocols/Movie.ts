@@ -1,14 +1,12 @@
-export type Movie = {
-    id: number,
+export type InsertMovie = {
+    imgUrl: string
     title: string,
-    status: boolean,
     platformId: number,
     genreId: number
 }
 
-export type InsertMovie = Omit<Movie, "id" | "status">
-
 export type MovieBody = {
+    imgUrl: string
     title: string,
     platform: string,
     genre: string

@@ -1,7 +1,5 @@
-type Review = {
-    id: number,
-    movieId: number,
+type ReviewBody = {
     score: number
 }
 
-export default Review;
+export default ReviewBody;

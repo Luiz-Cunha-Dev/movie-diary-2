@@ -15,6 +15,7 @@ model genres {
 
 model movies {
   id         Int       @id @default(autoincrement())
+  imgUrl     String
   title      String
   status     Boolean   @default(false)
   platformId Int
