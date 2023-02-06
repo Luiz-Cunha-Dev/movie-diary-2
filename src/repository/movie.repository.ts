@@ -1,6 +1,5 @@
-import { join } from "@prisma/client/runtime/index.js";
-import prisma from "../database/db.js";
-import {InsertMovie} from "../protocols/Movie.js";
+import prisma from "../database/db";
+import {InsertMovie} from "../protocols/Movie";
 
 export async function getAllMovies(){
     const data = await prisma.movies.findMany({
@@ -22,6 +21,9 @@ export async function getAllMovies(){
         }
     })
     data.map(m => delete m.platformId && delete m.genreId)
+
+    if(data.length === 0) throw {name: "NOT_FOUND"};
+
     return data;
 }
 
@@ -35,6 +37,9 @@ export async function getAllGenres(){
             }
         }
     })
+
+    if(data.length === 0) throw {name: "NOT_FOUND"};
+
     return data;
 }
 
@@ -48,6 +53,9 @@ export async function getAllPlatform(){
             }
         }
     })
+
+    if(data.length === 0) throw {name: "NOT_FOUND"};
+
     return data;
 }
 
@@ -63,6 +71,9 @@ export async function getAllReviews(){
         }
     })
     data.map(r => delete r.movieId)
+
+    if(data.length === 0) throw {name: "NOT_FOUND"};
+
     return data;
 }
 

@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { addMovie, allGenres, allMovies, allPlatform, allReviews, deleteMovie, updateStatusMovie } from "../controllers/movie.controllers.js";
-import { schemaValidation } from "../middlewares/schemaValidation.js";
-import movieSchemas from "../schemas/movie.schema.js";
-import scoreSchema from "../schemas/score.schema.js";
+import { addMovie, allGenres, allMovies, allPlatform, allReviews, deleteMovie, updateStatusMovie } from "../controllers/movie.controllers";
+import { schemaValidation } from "../middlewares/schemaValidation";
+import movieSchemas from "../schemas/movie.schema";
+import scoreSchema from "../schemas/score.schema";
 
 const movieRouter = Router();
 
